@@ -1,3 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@keyframes colorful-text {
+    0% {
+        color: blanchedalmond;
+    }
+    25% {
+        color: red;
+    }
+    50% {
+        color: yellow;
+    }
+    75% {
+        color: teal;
+    }
+    100% {
+        color: blue;
+    }
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 div {
   display: inline-block;
   width: 300px;
@@ -5,6 +33,7 @@ div {
 }
 
 h1 {
+    font-family: "dancing Script", cursive;
     text-align:center;
     color: rgb(243, 129, 8);
     font-size: 50px;
@@ -12,6 +41,7 @@ h1 {
     position: relative;
     top: 40%;
     text-shadow: 2px 2px 4px rgb(73, 96, 76);
+    animation: colorful-text 4s infinite alternate;
 }
 
 #one {
@@ -27,7 +57,7 @@ h1 {
 #one:after {
     content: "";
     background: url(https://picsum.photos/200/300) no-repeat center;
-    background-size: cover;
+    background-size: auto 100%;
     display: block;
     position: absolute;
     width 100%;
@@ -36,13 +66,23 @@ h1 {
     right: 0;
     z-index: -1;
     opacity: 20%;
+    transition: background-size 3s;
+}
 
+#one:hover:after {
+    background-size: auto 200%;
 }
 
 #two {
   background-color: brown;
   border-radius: 50% 0;
   box-shadow: 5px 5px 2px black;
+  /* transition: transform 4s; */
+  animation: spin 10s infinite linear alternate;
+
+}
+#two:hover {
+    /* transform: rotate(90deg); */
 
 }
 
